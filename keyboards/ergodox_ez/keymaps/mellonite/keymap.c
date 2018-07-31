@@ -1,4 +1,4 @@
-#include QMK_KEYBOARD_H
+#include "ergodox_ez.h"
 #include "keymap_steno.h"
 
 #define _DVORAK 0 // default layer
@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [_DVORAK] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
-        KC_GRAV,    KC_1,     KC_2,   KC_3,   KC_4,  KC_5,  KC_SYMB,
+      KC_GRAVE,    KC_1,     KC_2,   KC_3,   KC_4,  KC_5,  KC_SYMB,
         KC_TAB,  KC_QUOT,  KC_COMM, KC_DOT,   KC_P,  KC_Y,  KC_LBRC,
         KC_CAPS,    KC_A,     KC_O,   KC_E,   KC_U,  KC_I,
         KC_LSFT, KC_SCLN,     KC_Q,   KC_J,   KC_K,  KC_X,  MO(_SYMB),
@@ -50,11 +50,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              KC_PLOV,  KC_6,   KC_7,   KC_8,   KC_9,   KC_0,  KC_BSPC,
              KC_LBRC,  KC_F,   KC_G,   KC_C,   KC_R,   KC_L,  KC_SLSH,
                        KC_D,   KC_H,   KC_T,   KC_N,   KC_S,   KC_ENT,
-             KC_BSPC,  KC_B,   KC_M,   KC_W,   KC_V,   KC_Z, KC_RSHFT,
+             KC_BSPC,  KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,  KC_LSFT,
                             KC_LEFT,KC_DOWN,  KC_UP,KC_RGHT,  KC_RCTL,
              KC_DEL,  KC_RALT,
              KC_ESC,
-             KC_RCTL,KC_RSHFT, KC_ENT
+             KC_RCTL,KC_RSFT, KC_ENT
     ),
 /* Keymap 3: GeminiPR
  *
@@ -91,10 +91,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_DVRK,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
        STN_ST3,  STN_N5,  STN_N6,  STN_N7,  STN_N8,  STN_N9, KC_NO,
                  STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR, KC_NO,
-       STN_ST4,  STN_RR,  STN_RR,  STN_GR,  STN_SR,  STR_ZR, KC_NO,
+       STN_ST4,  STN_RR,  STN_RR,  STN_GR,  STN_SR,  STN_ZR, KC_NO,
                           KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_NO,
        KC_NO,   KC_NO,
-       KC_TRANS,
+       KC_TRNS,
        KC_NO,   STN_E,   STN_U
 ),
 /* Keymap 1: Symbol Layer
