@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Tab    |   '  |   ,  |   .  |   p  |   y  |  [   |           |  ]   |   f  |   g  |   c  |   r  |   l  |   /    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | Caps   |   a  |   o  |   e  |   u  |   i  |------|           |------|   d  |   h  |   t  |   n  |   s  | Enter  |
+ * | Caps   |   a  |   o  |   e  |   u  |   i  |------|           |------|   d  |   h  |   t  |   n  |   s  |   -    |
  * |--------+------+------+------+------+------|      |           | Bkspc|------+------+------+------+------+--------|
  * | LShift |   ;  |   q  |   j  |   k  |   x  |      |           |      |   b  |   m  |   w  |   v  |   z  | Shift  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | SyRq |       | Esc  |        |      |
  *                                 | Space|Left  |------|       |------| Right  |Enter |
- *                                 |      |Shift | Ctl  |       | CTL  | LShift |      |
+ *                                 |      |Shift | Ctl  |       | CTL  | Shift  |      |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -49,12 +49,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
              KC_PLOV,  KC_6,   KC_7,   KC_8,   KC_9,   KC_0,  KC_BSPC,
              KC_LBRC,  KC_F,   KC_G,   KC_C,   KC_R,   KC_L,  KC_SLSH,
-                       KC_D,   KC_H,   KC_T,   KC_N,   KC_S,   KC_ENT,
-             KC_BSPC,  KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,  KC_LSFT,
+                       KC_D,   KC_H,   KC_T,   KC_N,   KC_S,  KC_MINS,
+             KC_BSPC,  KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,  KC_RSHIFT,
                             KC_LEFT,KC_DOWN,  KC_UP,KC_RGHT,  KC_RCTL,
              KC_DEL,  KC_RALT,
              KC_ESC,
-             KC_RCTL,KC_RSFT, KC_ENT
+             KC_RCTL,KC_RSHIFT, KC_ENT
     ),
 /* Keymap 3: GeminiPR
  *
@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_DVRK,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
        STN_ST3,  STN_N5,  STN_N6,  STN_N7,  STN_N8,  STN_N9, KC_NO,
                  STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR, KC_NO,
-       STN_ST4,  STN_RR,  STN_RR,  STN_GR,  STN_SR,  STN_ZR, KC_NO,
+       STN_ST4,  STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR, KC_NO,
                           KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_NO,
        KC_NO,   KC_NO,
        KC_TRNS,
