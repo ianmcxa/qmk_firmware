@@ -2,15 +2,15 @@
 #include "keymap_steno.h"
 
 #define _DVORAK 0
-#define _LOWER 1
-#define _RAISE 2
+#define _SYMB 1
+#define _FUNC 2
 #define _PLOVER 3
 
 #define KC_ KC_TRNS
 #define _______ KC_TRNS
 
-#define KC_LOWR TO(_LOWER)
-#define KC_RASE TO(_RAISE)
+#define KC_SYMB MO(_SYMB)
+#define KC_FUNL MO(_FUNC)
 #define KC_DVRK TO(_DVORAK)
 #define KC_PLOV TO(_PLOVER)
 
@@ -18,41 +18,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_DVORAK] = LAYOUT_kc(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-     ESC , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,BSPC,
+    GESC , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,BSPC,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      TAB ,QUOT,COMM,DOT , P  , Y  ,                F  , G  , C  , R  , L  ,SLSH,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      LSFT, A  , O  , E  , U  , I  ,                D  , H  , T  , N  , S  ,MINS,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LCTL,SCLN, Q  , J  , K  , X  ,LOWR ,    RASE, B , M  , W  , V  , Z  ,RSFT,
+     LCTL,SCLN, Q  , J  , K  , X  ,SYMB ,    PLOV, B , M  , W  , V  , Z  ,RSFT,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       LGUI,RALT,SPC ,         ENT ,LALT,LALT
+                       LGUI,LALT,SPC ,         ENT ,UP ,DOWN
   //                  `----+----+----'        `----+----+----'
   ),
 
-  [_LOWER] = LAYOUT_kc(
+  [_SYMB] = LAYOUT_kc(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-     TILD,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LPRN,RPRN,BSPC,
+    GRAVE,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LPRN,RPRN,DEL ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     TAB , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,DEL ,
+     TAB , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,BSLS,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     LSFT,    ,    , UP ,    ,LBRC,               RBRC, P4 , P5 , P6 ,PLUS,PIPE,
+     LSFT,HOME,    , UP ,EQL ,PLUS,               LBRC,RBRC, P5 , P6 ,PLUS,PIPE,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LCTL,    ,LEFT,DOWN,RGHT,LCBR,    ,    DVRK ,RCBR, P1 , P2 , P3 ,MINS,RSFT,
+     LCTL,END ,LEFT,DOWN,RGHT,MINS,    ,     FUNL,LCBR,RCBR, P2 , P3 ,MINS,RSFT,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                           ,    ,SPC ,         ENT ,    , P0
+                           ,    ,SPC ,         ENT ,LEFT,RGHT
   //                  `----+----+----'        `----+----+----'
   ),
 
-  [_RAISE] = LAYOUT_kc(
+  [_FUNC] = LAYOUT_kc(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
      F12 , F1 , F2 , F3 , F4 , F5 ,                F6 , F7 , F8 , F9 ,F10 ,F11 ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
          ,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LPRN,RPRN,    ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,MPRV,MNXT,VOLU,PGUP,UNDS,               EQL ,HOME,    ,    ,    ,BSLS,
+         ,MPRV,MNXT,VOLU,PGUP,UNDS,                   ,    ,    ,    ,    ,    ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     MUTE,MSTP,MPLY,VOLD,PGDN,MINS,DVRK ,   PLOV ,PLUS,END ,    ,    ,    ,    ,
+     MUTE,MSTP,MPLY,VOLD,PGDN,MINS,     ,        ,    ,    ,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                            ,    ,    ,             ,    ,
   //                  `----+----+----'        `----+----+----'
@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|-------+-------+-------+-------+-------+-------|                    |-------+-------+-------+-------+-------+-------|
    KC_LSHIFT,STN_S1 ,STN_TL ,STN_PL ,STN_HL ,STN_ST1,                     STN_ST3,STN_FR ,STN_PR ,STN_LR ,STN_TR ,STN_DR ,
   //|-------+-------+-------+-------+-------+-------+-------.    ,-------|-------+-------+-------+-------+-------+-------|
-     KC_LCTL,STN_S2 ,STN_KL ,STN_WL ,STN_RL ,STN_ST2,KC_RASE,     _______,STN_ST4,STN_RR ,STN_BR ,STN_GR ,STN_SR ,STN_ZR ,
+     KC_LCTL,STN_S2 ,STN_KL ,STN_WL ,STN_RL ,STN_ST2,KC_DVRK,     KC_DVRK,STN_ST4,STN_RR ,STN_BR ,STN_GR ,STN_SR ,STN_ZR ,
   //`-------+-------+-------+--+----+-------+-------+-------/    \-------+-------+-------+-------+-------+-------+-------'
                                  STN_A , STN_O ,_______,            _______, STN_E , STN_U
   //                           `-------+-------+-------'           `-------+-------+-------'
